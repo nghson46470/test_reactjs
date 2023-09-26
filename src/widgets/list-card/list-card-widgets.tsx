@@ -1,4 +1,4 @@
-import { useEffect, useRef,SetStateAction,Dispatch } from "react";
+import { useEffect, useRef, SetStateAction, Dispatch } from "react";
 import { Stack, Text, HStack, Box } from "@chakra-ui/react";
 import { CardProps } from "../../components";
 import CardItem from "../../components/card/card-item";
@@ -7,7 +7,7 @@ interface ListCardProps {
   title?: string;
   listMovie?: CardProps[];
   handlePressRight?: (isChangeRow: boolean) => void;
-  setCurrentData?:  Dispatch<SetStateAction<CardProps>>;
+  setCurrentData?: Dispatch<SetStateAction<CardProps>>;
   handlePressLeft?: (isChangeRow: boolean, positionX: number) => void;
   positonCurrent?: {
     x: number;
@@ -50,9 +50,6 @@ export const ListCardWidgets = (props: ListCardProps) => {
     movieListRef.current.scrollLeft = positionX * widthItem;
   };
 
-
-
-
   return (
     <Stack scrollSnapAlign="center">
       <Text color="white" fontSize="24px" fontWeight="600">
@@ -74,7 +71,7 @@ export const ListCardWidgets = (props: ListCardProps) => {
           listMovie.length &&
           listMovie.map((movie, index) => {
             return (
-              <Box key={index} >
+              <Box key={index}>
                 <CardItem
                   image={movie.image}
                   subtitle={movie.subtitle}

@@ -12,10 +12,8 @@ export interface CardProps {
 const CardItem = (props: CardProps) => {
   const { title, subtitle, image, isFocus,getDataCard } = props;
 
-
   useEffect(()=>{
     if(isFocus){
-      console.log('title',title)
       getDataCard?.({title})
     }
   },[getDataCard, isFocus, title])

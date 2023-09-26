@@ -17,8 +17,6 @@ function App() {
   const containerListRef = useRef<any>();
   const listMovieRef = useRef<any>();
 
-  console.log("positonCurrent", positonCurrent);
-
   useEffect(() => {
     axios
       .get("https://cdn.jsdelivr.net/gh/tconns/demo-tdm/data_recommend.json")
@@ -99,8 +97,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("positonCurrent", listMovieRef);
-
     const heightListMovie = listMovieRef?.current?.offsetHeight;
 
     window.scrollTo(0, positonCurrent.y * heightListMovie);
